@@ -3,12 +3,12 @@ Practice DEFINING and CALLING
      FUNCTIONS
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
+         their colleagues and Yiyuan"bob"Wang.
 """
 
 ########################################################################
 #
-# TODO: 1. PUT YOUR NAME IN THE ABOVE LINE and...
+# DONE: 1. PUT YOUR NAME IN THE ABOVE LINE and...
 #
 #   Allow this file to use the rosegraphics.py file by marking the src
 #   directory as a "Sources Root".  Do that by right clicking on the src folder,
@@ -34,9 +34,12 @@ def main():
     window = rg.TurtleWindow()
 
     turtle1()
+    turtle4()
     turtle3()
     turtle2()
     turtle2()
+    turtle5()
+
 
     window.close_on_mouse_click()
 
@@ -103,9 +106,75 @@ def turtle3():
     maja.end_fill()
 
 
+def turtle4():
+    darcy = rg.SimpleTurtle('turtle')
+    darcy.pen = rg.Pen('chocolate',35)
+    darcy.paint_bucket = rg.PaintBucket('azure')
+
+    darcy_begin_here = rg.Point(darcy.x_cor(),darcy.y_cor())
+    first_points = rg.Point(random.randrange(-150,150),random.randrange(0,150))
+
+    darcy.pen_up()
+    darcy.go_to(first_points)
+    darcy.pen_down()
+
+    darcy.left(25)
+    darcy.forward(90)
+
+    darcy.begin_fill()
+    darcy.draw_square(300)
+    darcy.forward(70)
+    darcy.draw_regular_polygon(6,160)
+    darcy.end_fill()
+
+    darcy.pen_up()
+    darcy.go_to(darcy_begin_here)
+    darcy.pen_down()
+
+
+def turtle5():
+    val = rg.SimpleTurtle('turtle')
+    frank = rg.SimpleTurtle('turtle')
+    val.paint_bucket = rg.PaintBucket('red')
+    frank.paint_bucket = rg.PaintBucket('pink')
+    val.pen = rg.Pen('green',23)
+    frank.pen = rg.Pen('purple',30)
+    val_begin_here = rg.Point(val.x_cor(), val.y_cor())
+    val_first_points = rg.Point(random.randrange(-150, 150), random.randrange(0, 150))
+    frank_begin_here = rg.Point(frank.x_cor(), frank.y_cor())
+    frank_first_points = rg.Point(random.randrange(-150, 150), random.randrange(0, 150))
+
+    val.pen_up()
+    val.go_to(val_first_points)
+    val.pen_down()
+
+    val.begin_fill()
+    val.draw_regular_polygon(5, 80)
+
+    val.pen_up()
+    val.go_to(val_begin_here)
+    val.pen_down()
+
+    frank.pen_up()
+    frank.go_to(frank_first_points)
+    frank.pen_down()
+
+    frank.begin_fill()
+    frank.draw_regular_polygon(12, 70)
+
+    frank.pen_up()
+    frank.go_to(val_begin_here)
+    frank.pen_down()
+
+
+
+
+
+
+
 ########################################################################
 #
-# TODO: 2.
+# done: 2.
 #   READ the code above.  Be sure you understand:
 #     -- How many functions are defined above?
 #           (Answer: 4)
@@ -115,9 +184,9 @@ def turtle3():
 #     -- How many times does   main   call the   turtle1   function?
 #            (Answer: 1)
 #     -- How many times does   main   call the   turtle2   function?
-#            (Hint: the answer is NOT 1.)
+#            (Hint: the answer is NOT 1.) IT'S 2
 #     -- What line of code calls the   main   function?
-#            (Answer: look at the LAST line of this module, far below.)
+#            (Answer: look at the LAST line of this module, far below.) LINE 225
 #
 #     ** ASK QUESTIONS if you are uncertain. **
 #
@@ -137,7 +206,7 @@ def turtle3():
 
 ########################################################################
 #
-# TODO: 3.
+# DONE: 3.
 #   Define another function,
 #   immediately below the end of the definition of   turtle3   above.
 #   Name your new function   turtle4.
@@ -167,7 +236,7 @@ def turtle3():
 
 ########################################################################
 #
-# TODO: 4.
+#DONE: 4.
 #   Add a line to   main   that CALLS your new function immediately
 #   AFTER  main  calls turtle1.  So:
 #     -- the SimpleTurtle from turtle1 should move,
